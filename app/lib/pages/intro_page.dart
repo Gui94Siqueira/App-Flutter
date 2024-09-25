@@ -1,3 +1,4 @@
+import 'package:components/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
@@ -7,7 +8,7 @@ class IntroPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(
                 left: 80.0, right: 80, bottom: 20, top: 40),
@@ -16,7 +17,7 @@ class IntroPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: Text(
-              "we deliver groceries at you do doorstap",
+              "We deliver groceries at you do doorstap",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 40,
@@ -30,7 +31,15 @@ class IntroPage extends StatelessWidget {
           ),
 
           const Spacer(),
-          Container(
+          
+          GestureDetector(
+            onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) {
+                return const HomePage();
+             },
+            ),
+            ),
+            child:  Container(
             decoration: BoxDecoration(
                 color: Colors.deepPurple,
                 borderRadius: BorderRadius.circular(12)
@@ -40,7 +49,9 @@ class IntroPage extends StatelessWidget {
               "Get Started",
               style: TextStyle(color: Colors.white),
             ),
+           ),
           ),
+         
 
           const Spacer(),
         ],
